@@ -10,7 +10,7 @@
       "ES2020.String",
       "es2019"
     ],
-    "target": "ESNext",
+    "target": "ES2015",
     "rootDir": ".",
     "esModuleInterop": true,
     "removeComments": true,
@@ -20,7 +20,7 @@
     "noImplicitAny": true,
     "strictNullChecks": false,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "."
   },
   "parcelTsPluginOptions": {
     "transpileOnly": false

@@ -3,12 +3,13 @@
   "version": "0.7.2",
   "license": "MIT",
   "scripts": {
+    "build": "npm run build:tsc && npm run build:babel && npm run build:esbuild && npm run build:esbuild:prog",
     "build:tsc": "tsc --outDir lib/tsc",
+    "build:babel": "babel src --out-dir lib/babel --extensions \".ts,.tsx\"",
+    "build:esbuild": "esbuild src/index.ts --bundle --platform=node --outfile=lib/esbuild/bundle.js",
+    "build:esbuild:prog": "node --inspect ./esbuild.js",
     "type-check:watch": "npm run type-check -- --watch",
-    "build:babel": "npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build": "npm run build:tsc && npm run build:babel",
-    "build:js": "babel src --out-dir lib/babel --extensions \".ts,.tsx\""
+    "build:types": "tsc --emitDeclarationOnly"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
@@ -19,9 +20,13 @@
     "@babel/preset-typescript": "^7.12.7",
     "@types/node": "^14.14.11",
     "babel-plugin-transform-typescript-metadata": "^0.3.1",
-    "typescript": "^3.9.7"
+    "esbuild": "^0.9.6",
+    "esbuild-plugin-tsc": "^0.2.0",
+    "typescript": "^3.9.9"
   },
   "dependencies": {
+    "@typedorm/common": "^1.11.0",
+    "@typedorm/core": "^1.11.0",
     "reflect-metadata": "^0.1.13"
   }
 }
