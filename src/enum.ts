@@ -9,7 +9,7 @@ export function ExampleDecorator(): PropertyDecorator {
 
 enum DEMO {
   PROP_1 = '1',
-  PROP_2 = 2
+  PROP_2 = '2'
 }
 class A {
   @ExampleDecorator()
