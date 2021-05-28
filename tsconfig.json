@@ -20,7 +20,11 @@
     "noImplicitAny": true,
     "strictNullChecks": false,
     "moduleResolution": "node",
-    "baseUrl": "."
+    "baseUrl": "/Users/rpatel/Development/Personal/ts-metadata-build/lib/tsc",
+    "paths": {
+      "@package-a/*": ["packages/package-a/*"],
+      "@package-b/*": ["packages/package-b/*"]
+    }
   },
   "parcelTsPluginOptions": {
     "transpileOnly": false
